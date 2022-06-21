@@ -8,7 +8,7 @@ CAT_W = 16
 
 
 #フレームレートとステップ時間
-FPS=30
+FPS=60
 DT=1/FPS
 #gravity
 G=9.8
@@ -65,7 +65,7 @@ class App:
         for i in range(cat_count):
             if self.Cats[i].pos.y < WINDOW_H:
                 #fouce
-                f = self.Cats[i].weight * G
+                f = self.Cats[i].weight *  + 10**2
                 a = f/ self.Cats[i].weight
                 #integra ax sp
                 self.Cats[i].vel += a*DT
@@ -82,13 +82,13 @@ class App:
 
     def draw(self):
         pyxel.cls(0)
-        pyxel.text(55,40,"I would like to FIRE. but I wanna no get fire.",pyxel.frame_count % 16)
+        pyxel.text(50,40,"I would like to FIRE.\n but I wanna no get fire.",pyxel.frame_count % 16)
         pyxel.blt(self.IMG_ID0_X,self.IMG_ID0_Y,self.IMG_ID0,0,0,38,16)
 
         #draw cat
         for cats in self.Cats:
             pyxel.blt(cats.pos.x,cats.pos.y,cats.img_cat,0,0,CAT_W,CAT_H,5)
-            
+
 App()
 
 
