@@ -88,7 +88,7 @@ class App:
         #draw cat
         for cats in self.Cats:
             pyxel.blt(cats.pos.x,cats.pos.y,cats.img_cat,0,0,CAT_W,CAT_H,5)
-
+            
 App()
 
 
